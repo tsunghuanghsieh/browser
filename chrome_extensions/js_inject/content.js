@@ -25,8 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // chrome.runtime.sendMessage({"message": "someEvent"});
 });
 
+// receive and handle event
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
+        // handle event from background process
         if (request.message === "message4Content") {
             // do something on the page
         }
