@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     script.id = 'jsinjected';
     script.async = true;
     // TODO: specify the url to js for injection
-    script.src = '';
+    script.src = chrome.runtime.getURL("custom_action.js");
 
     // Attach handlers for all browsers
     script.onload = script.onreadystatechange = function (e, isAbort) {
