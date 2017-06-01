@@ -20,4 +20,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var head = document.getElementsByTagName('head')[0];
     head.insertBefore(script, head.firstChild);
+
+    // To send message to background process
+    // chrome.runtime.sendMessage({"message": "someEvent"});
 });
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if (request.message === "message4Content") {
+            // do something on the page
+        }
+    }
+);
